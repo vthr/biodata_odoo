@@ -1,0 +1,52 @@
+<odoo>
+	<data>
+
+
+		<!-- FORM -->
+		<record model="ir.ui.view" id="biodata_form">
+			<field name="name">biodata.form</field>
+			<field name="model">biodata.model</field>
+			<field name="arch" type="xml">
+				<form string="Biodata Form">
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="alamat"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- TREE -->
+		<record model="ir.ui.view" id="biodata_tree">
+			<field name="name">biodata.tree</field>
+			<field name="model">biodata.model</field>
+			<field name="arch" type="xml">
+				<tree string="Biodata Tree">
+					<field name="name"/>
+					<field name="alamat"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- ACTION -->
+		<record model="ir.actions.act_window" id="biodata_action">
+			<field name="name">Biodata</field>
+			<field name="res_model">biodata.model</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- Ini kita bikin Aplikasi di Odoo Desktop -->
+		<menuitem id="biodata_menu" name="Aplikasi Biodata"/>
+
+		<!-- Kita bikin menu di dalam program Aplikasi Biodata -->
+		<menuitem id="biodata_info" name="Informasi" parent="biodata_menu"/>
+
+		<!-- bikin list untuk load FORM dan TREE dari action -->
+		<menuitem id="biodata_list" name="Biodata" parent="biodata_info" action="biodata_action"/>
+
+
+	</data>
+</odoo>

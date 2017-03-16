@@ -1,0 +1,37 @@
+<odoo>
+	<data>
+
+		<!-- FORM -->
+		<record id="biodata_form_ext" model="ir.ui.view">
+            <field name="name">biodata.form.ext</field>
+            <field name="model">biodata.model</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="biodata.biodata_form"/>
+            <field name="arch" type="xml">
+ 
+                <xpath expr="//field[@name='alamat']" position="after">
+                	<field name="umur" />
+                	<field name="gender" />
+                </xpath>
+
+            </field>
+        </record>
+
+		<!-- TREE -->
+	    <record id="biodata_tree_ext" model="ir.ui.view">
+	        <field name="name">biodata.tree.ext</field>
+	        <field name="model">biodata.model</field>
+	        <field name="type">tree</field>
+	        <field name="inherit_id" ref="biodata.biodata_tree"/>
+	        <field name="arch" type="xml">
+
+				<field name="alamat" position="after">
+                	<field name="umur" />
+                	<field name="gender" />
+				</field>
+
+	        </field>
+	    </record>
+
+	</data>
+</odoo>
